@@ -19,7 +19,7 @@ class Problem2: Solution() {
         println(evenFib.sum())
     }
 
-    val evenFib = sequence {
+    private val evenFib = sequence {
         val elem = IntArray(2) { 1 }
         while (nextElement(elem)) {
             if ((elem[1] and 1) == 0) {
