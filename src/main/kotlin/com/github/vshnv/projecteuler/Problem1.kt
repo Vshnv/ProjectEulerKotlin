@@ -18,12 +18,12 @@ class Problem1: Solution() {
         println(sum3 + sum5 - sum15)
     }
 
-    fun findN(a1: Int, an: Int, d: Int): Int {
+    private fun findN(a1: Int, an: Int, d: Int): Int {
         // an = ai + (n-1) * d
         return (((an-1)-a1)/d)+1
     }
 
-    fun sumTillN(value: Int, n: Int): Float {
+    private fun sumTillN(value: Int, n: Int): Float {
         return ((value.toFloat() * n)/2) * (n + 1)
     }
 }

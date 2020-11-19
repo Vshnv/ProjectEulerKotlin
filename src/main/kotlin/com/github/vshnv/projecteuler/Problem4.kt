@@ -1,6 +1,5 @@
 package com.github.vshnv.projecteuler
 
-import kotlin.math.max
 
 class Problem4: Solution() {
     /**
