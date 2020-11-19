@@ -1,6 +1,6 @@
 package com.github.vshnv.projecteuler
 
 fun main() {
-    val soln: Solution = Problem6()
+    val soln: Solution = Problem7()
     soln.run()
 }

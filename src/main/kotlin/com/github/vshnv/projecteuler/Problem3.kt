@@ -15,7 +15,7 @@ class Problem3: Solution() {
      *
      */
     override fun solve() {
-        println(factors.filter { isPrime(it) }.maxOrNull() ?: VALUE)
+        println(factors.filter { it.isPrime() }.maxOrNull() ?: VALUE)
     }
 
     private val factors = sequence {
@@ -38,15 +38,5 @@ class Problem3: Solution() {
         return cur
     }
 
-    private fun isPrime(n: Long): Boolean {
-        if (n <= 1) return false
-        if (n <= 3) return true
-        if (n % 2 == 0L || n % 3 == 0L) return false
-        var i = 5
-        while (i * i <= n) {
-            if (n % i == 0L || n % (i + 2) == 0L) return false
-            i += 6
-        }
-        return true
-    }
+
 }

@@ -17,7 +17,7 @@ class Problem5: Solution() {
         val commonFactors = mutableMapOf<Int,Int>()
         for (i in 20 downTo 1){
             if (commonFactors.containsKey(i)) continue
-            i.factors.filter { isPrime(it) }.groupingBy { it }.eachCount().forEach { entry ->
+            i.factors.filter { it.isPrime() }.groupingBy { it }.eachCount().forEach { entry ->
                 if (commonFactors[entry.key] ?: 0 < entry.value) {
                     commonFactors[entry.key] = entry.value
                 }
@@ -26,18 +26,6 @@ class Problem5: Solution() {
         println(commonFactors.entries.fold(1) { a,b ->
             a * b.key.toDouble().pow(b.value.toDouble()).toInt()
         })
-    }
-
-    private fun isPrime(n: Int): Boolean {
-        if (n <= 1) return false
-        if (n <= 3) return true
-        if (n % 2 == 0 || n % 3 == 0) return false
-        var i = 5
-        while (i * i <= n) {
-            if (n % i == 0 || n % (i + 2) == 0) return false
-            i += 6
-        }
-        return true
     }
 
     private val Int.factors: Sequence<Int>
