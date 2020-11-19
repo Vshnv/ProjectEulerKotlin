@@ -1,6 +1,6 @@
 package com.github.vshnv.projecteuler
 
-import java.lang.Math.pow
+import kotlin.math.pow
 
 class Problem5: Solution() {
     /**
@@ -24,7 +24,7 @@ class Problem5: Solution() {
             }
         }
         println(commonFactors.entries.fold(1) { a,b ->
-            a * pow(b.key.toDouble(), b.value.toDouble()).toInt()
+            a * b.key.toDouble().pow(b.value.toDouble()).toInt()
         })
     }
 

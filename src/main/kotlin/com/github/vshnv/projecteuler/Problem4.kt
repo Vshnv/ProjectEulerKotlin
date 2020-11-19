@@ -16,7 +16,7 @@ class Problem4: Solution() {
         println(series.filter { isPalindrome(it) }.maxOrNull() ?: 999*999)
     }
 
-    val series = sequence {
+    private val series = sequence {
         for (a in 999 downTo 100) {
             for (b in a downTo 100) {
                 yield(a * b)
